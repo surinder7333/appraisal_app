@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, use } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchUserById, updateUser, fetchUsers } from "@/redux/features/users/usersThunks"
@@ -7,7 +7,7 @@ import DashboardLayout from "@/components/layouts/DashboardLayout"
 import { useAuth } from "@/context/AuthContext"
 
 export default function EditUser({ params }) {
-  const { id } = use(params)
+  const { id } = params
   const router = useRouter()
   const dispatch = useDispatch()
   const { user: currentUser } = useAuth()

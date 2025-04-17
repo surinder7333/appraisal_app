@@ -7,11 +7,10 @@ import { createAppraisal } from "@/redux/features/appraisals/appraisalsThunks";
 import { fetchUserById } from "@/redux/features/users/usersThunks";
 import DashboardLayout from "@/components/layouts/DashboardLayout";
 import { useAuth } from "@/context/AuthContext";
-import { use } from "react";
 import { toast } from "react-toastify";
 
 export default function CreateAppraisal({ params }) {
-  const { userId } = use(params);
+  const { userId } = params
   const router = useRouter();
   const dispatch = useDispatch();
   const { user: currentUser } = useAuth();
